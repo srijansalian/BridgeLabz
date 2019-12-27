@@ -3,6 +3,7 @@ package com.bridgelabz.util;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class util {
@@ -13,14 +14,18 @@ public class util {
 		
 	}
 	 public static String inputWord(){ //To input an String
-			try{
-				return bufferedReader.readLine();
-			}
-			catch(IOException exception){
-				System.out.println(exception.getMessage());
-			}
-			return "";
-		}
+			//try{
+				//return bufferedReader.readLine();
+			//}
+			//catch(IOException exception){
+				//System.out.println(exception.getMessage());
+		//	}
+			//return "";
+		//}
+		System.out.println("Enter the String");
+		String str=sc.next();
+		return str;
+	 }
 	 public static int inputInteger(){
 		 
 			//try{
@@ -72,10 +77,24 @@ public class util {
 		 return arr;
 			 
 	 }
-	 public static void display(int arr[]) {
+	 public static String[] inputString() {
+		 System.out.println("Enter the value of n");
+		 int n=sc.nextInt();
+		 String arr[]=new String[n];
+		 System.out.println("Enter the value ");
+		 for(int i=0;i<n;i++)
+			 arr[i]=sc.next();
+		 return arr;
+	 }
+	 public static void displayarr(int arr[]) {
 		 for(int i=0;i<arr.length;i++)
 			 System.out.println(arr[i]);
 	 }
+	 public static void printArraystring(String str[]) 
+	 { 
+	     for (int i=0; i<str.length; i++) 
+	         System.out.print(str[i]+" "); 
+	 } 
 	 
 
 	public static boolean isleap(int year) {
@@ -133,4 +152,58 @@ public class util {
 		
 		}return t;
 	}
+	public static boolean inputboolean() {
+		boolean a=sc.nextBoolean();
+		return a;
+	}
+	public static boolean anagram(String a,String b) {
+		int n1=a.length();
+		int n2=b.length();
+		if(n1!=n2)
+			return false;
+		char ar1[]=a.toCharArray();
+		char ar2[]=b.toCharArray();
+		Arrays.sort(ar1);
+		Arrays.sort(ar2);
+		for(int i=0;i<ar1.length;i++) 
+			if(ar1[i]!=ar2[i])
+				return false;
+		
+		return true;
+			
+	}
+	/*Bubble search*/
+		public static int[]  Bubblesort(int arr[] ) {
+			int n=arr.length;
+			for(int i=0;i<=n;i++) {
+				for(int j=0;j<n-1;j++) {
+					if(arr[j]>arr[j+1]) {
+						int temp=arr[j];
+						arr[j]=arr[j+1];
+						arr[j+1]=temp;					
+						
+					}
+				}
+				
+			}return arr;
+		}
+		/*to find the number*/
+		public static int search(int lo,int hi) {
+			
+			 
+			if((hi-lo)==1)
+				return lo;
+			int mid=(lo+hi)/2;
+			System.out.println("Is the number is less than  "+mid);
+			
+			boolean s=util.inputboolean();
+			if(s) 
+				return search(lo,mid);
+			
+				
+			return search(mid,hi);
+			
+			
+		}
+	
 }
