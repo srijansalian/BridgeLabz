@@ -1,7 +1,5 @@
 package com.bridgelabz.Algorithm;
 
-//import java.util.Arrays;
-
 import com.bridgelabz.util.util;
 
 public class Anagram {

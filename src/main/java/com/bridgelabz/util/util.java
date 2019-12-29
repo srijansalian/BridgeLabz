@@ -1,6 +1,7 @@
 package com.bridgelabz.util;
 
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
@@ -13,33 +14,14 @@ public class util {
 	 public util(){
 		
 	}
-	 public static String inputWord(){ //To input an String
-			//try{
-				//return bufferedReader.readLine();
-			//}
-			//catch(IOException exception){
-				//System.out.println(exception.getMessage());
-		//	}
-			//return "";
-		//}
+	 public static String inputWord(){ 
 		System.out.println("Enter the String");
 		String str=sc.next();
 		return str;
 	 }
 	 public static int inputInteger(){
 		 
-			//try{
-				//try{	
-					//return Integer.parseInt(bufferedReader.readLine());
-			//	}
-				//catch(NumberFormatException exception){
-					//System.out.println(exception.getMessage());	
-			//	}
-			//}catch(IOException exception){
-				//System.out.println(exception.getMessage());
-		//	}
-		//return 0;
-		// System.out.println("Enter the Number");
+			
 		 int n=sc.nextInt();
 		 return n;
 		 
@@ -50,17 +32,7 @@ public class util {
 	 }
 	 public static double inputDouble(){
 		 
-		//	try{
-			//	try{	
-				//	return Double.parseDouble(bufferedReader.readLine());
-				//}
-				//catch(NumberFormatException exception){
-					//System.out.println(exception.getMessage());	
-			//	}
-			//}catch(IOException exception){
-				//System.out.println(exception.getMessage());
-		//	}
-		//return 0.0;
+		
 		 double n=sc.nextDouble();
 		 return n;
 	}
@@ -81,7 +53,7 @@ public class util {
 		 System.out.println("Enter the value of n");
 		 int n=sc.nextInt();
 		 String arr[]=new String[n];
-		 System.out.println("Enter the value ");
+		 System.out.println("Enter the String ");
 		 for(int i=0;i<n;i++)
 			 arr[i]=sc.next();
 		 return arr;
@@ -104,7 +76,7 @@ public class util {
 	}
 	public static int[][] TwodArray(){
 		System.out.println("Enter the value of m");
-		Scanner sc=new Scanner(System.in);
+		
 		int m=sc.nextInt();
 		System.out.println("Enter the value of n");
 		int n=sc.nextInt();
@@ -117,7 +89,7 @@ public class util {
 		}return a;
 	}
 	public static String dayofweek(int d,int m,int y) {
-		String mon[]= {"sun","mon","thu","wed","thus","Fri","Sat","sun"};
+		String mon[]= {"sun","mon","thu","wed","thus","Fri","Sat"};
 		int  a=y-(14-m)/12;
 		 int b=a+a/4-a/100+a/400;
 		 int c=m+12*((14-m)/12)-2;
@@ -169,18 +141,19 @@ public class util {
 			if(ar1[i]!=ar2[i])
 				return false;
 		
+		
 		return true;
 			
 	}
 	/*Bubble search*/
 		public static int[]  Bubblesort(int arr[] ) {
-			int n=arr.length;
-			for(int i=0;i<=n;i++) {
-				for(int j=0;j<n-1;j++) {
-					if(arr[j]>arr[j+1]) {
-						int temp=arr[j];
-						arr[j]=arr[j+1];
-						arr[j+1]=temp;					
+			int n = arr.length;
+			for(int i = 0;i <= n; i++) {
+				for(int j = 0;j <n-i-1 ; j++) {
+					if(arr[j] > arr[j+1]) {
+						int temp = arr[j];
+						arr[j] = arr[j+1];
+						arr[j+1] = temp;					
 						
 					}
 				}
@@ -205,5 +178,142 @@ public class util {
 			
 			
 		}
+		/*Binary search of a string */
+		public static int strBinarySearch(String[] arr, String key) {
+			int s = 0, e = arr.length - 1, mid;
+			while (s <= e) {
+				mid = s + (e - s) / 2;
+
+				if (arr[mid].equals(key))
+					return mid;
+
+				if (arr[mid].compareTo(key) > 0)
+					s = mid + 1;
+
+				else
+					e = mid - 1;
+			}
+			return -1;
+		}
+		/*String insertion sort*/
+		public static String[] strInsertionSort(String[] arr) {
+			String key;
+			int j = 0;
+			for (int i = 1; i < arr.length; i++) {
+				key = arr[i];
+				j = i - 1;
+				while (j >= 0 && arr[j].compareTo(key) > 0) {
+					arr[j + 1] = arr[j];
+					j = j - 1;
+				}
+				arr[j + 1] = key;
+			}
+			return arr;
+		}
+		/*Import a file from the system*/
+		public static String getFromFile(String path) {
+			BufferedReader bufferedReader = null;
+			String str = "";
+			try {
+				bufferedReader = new BufferedReader(new FileReader(path));
+				str = bufferedReader.readLine();
+				bufferedReader.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			return str;
+		}
+		/*Insertion sort for an integer*/
+		public static int[] intInsertionSort(int[] arr) {
+			
+			int temp;
+			int j = 0;
+			for (int i = 1; i < arr.length; i++) {
+				temp = arr[i];
+				j = i - 1;
+				while (j >= 0 && arr[j] > temp) {
+					arr[j + 1] = arr[j];
+					j = j - 1;
+				}
+				arr[j + 1] = temp;
+			}
+			return arr;
+		}
+		/*Merge sort of an String*/
+		public static  void  merge(String[] arr, int s, int m, int e) {
+			int p = s, q = m + 1;
+			String[] newArr = new String[e - s + 1];
+			int j = 0;
+			for (int i = s; i <= e; i++) {
+				if (p > m)
+					newArr[j++] = arr[q++];
+				else if (q > e)
+					newArr[j++] = arr[p++];
+				else if (arr[p].compareTo(arr[q]) < 0)
+					newArr[j++] = arr[p++];
+				else
+					newArr[j++] = arr[q++];
+			}
+			for (int k = 0; k < j; k++) {
+				arr[s++] = newArr[k];
+			}
+
+		}
+		/*Merge sorting*/
+		public static  void sort(String arr[], int l, int r) 
+	    { 
+	        if (l < r) 
+	        { 
+	            int m = (l+r)/2; 
+	            sort(arr, l, m); 
+	            sort(arr , m+1, r); 
+	            merge(arr, l, m, r); 
+	        }util.printArraystring(arr);
+		
+	    }
+		/*to find out number is a prime or not*/
+		public static boolean isPrime(int num) {
+			if (num == 0 || num == 1) {
+				return false;
+			}
+			for (int i = 2; i < num; i++) {
+				if (num % i == 0) {
+					return false;
+				}
+			}
+			return true;
+
+		}
+		/*Palindrome or not*/ 
+		public static boolean isPalindrome(int num) {
+			int r, sum = 0;
+			int temp = num;
+			while (num > 0) {
+				r = num % 10;
+				sum = (sum * 10) + r;
+				num = num / 10;
+			}
+			if (temp == sum) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		/*Converting to binary*/
+		
+			public static int[] binary(int z) {
+				int b[]=new int[8];
+				int i=0;
+				while(z>0) {
+					 b[i]=z%2;
+					 z=z/2;
+					i++;
+				}
+				return b;
+				
+
+			}
+		
+		
 	
 }
