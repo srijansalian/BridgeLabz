@@ -154,7 +154,7 @@ public class util {
 			return false;
 		char ar1[]=a.toCharArray();
 		char ar2[]=b.toCharArray();
-		Arrays.sort(ar1);
+		Arrays.sort(ar1);/*Sorting of an array*/
 		Arrays.sort(ar2);
 		for(int i=0;i<ar1.length;i++) 
 			if(ar1[i]!=ar2[i])
@@ -164,7 +164,7 @@ public class util {
 		return true;
 			
 	}
-	/*Bubble search*/
+	/*Bubble search of an Integer*/
 		public static int[]  Bubblesort(int arr[] ) {
 			int n = arr.length;
 			for(int i = 0;i <= n; i++) {
