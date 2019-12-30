@@ -6,8 +6,8 @@ public class BubbleSort {
 
 	public static void main(String[] args) {
 		
-		int a[]=util.inputArray();
-		util.Bubblesort(a);
+		int a[]=util.inputArray();/*Giving an Input*/
+		util.Bubblesort(a);/*Bubble Sorting Function*/
 		util.displayarr(a);
 		
 
