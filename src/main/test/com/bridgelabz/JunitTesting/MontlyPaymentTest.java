@@ -16,7 +16,7 @@ class MontlyPaymentTest {
 	@Test
 	void test() {
 		double ini=util.montlypayment(1000,6,10);
-		 assertEquals(ini,"mon");
+		 assertEquals(ini,18.525852047602022);
 	}
 
 }

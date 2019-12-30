@@ -1,6 +1,4 @@
 package com.bridgelabz.logical;
-import java.util.*;
-
 import com.bridgelabz.util.util;
 public class CouponNumber {
 	 public static int getCoupon(int n) {
