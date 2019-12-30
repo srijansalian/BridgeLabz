@@ -14,11 +14,15 @@ public class util {
 	 public util(){
 		
 	}
+	 /*This method is used to input a String*/
+	 
 	 public static String inputWord(){ 
 		System.out.println("Enter the String");
 		String str=sc.next();
 		return str;
 	 }
+	 /*This method is used to input an numbers*/
+	 
 	 public static int inputInteger(){
 		 
 			
@@ -26,16 +30,20 @@ public class util {
 		 return n;
 		 
 	}
+	 /*It is used to input a float value to it*/
 	 public static float inputFloat() {
 		 float n=sc.nextFloat();
 		 return n;
 	 }
+	 /*It is used input an double value*/
 	 public static double inputDouble(){
 		 
 		
 		 double n=sc.nextDouble();
 		 return n;
 	}
+	 /*It is used to input an Array*/
+	 
 	 public static int[] inputArray() {
 		 
 		 
@@ -49,6 +57,7 @@ public class util {
 		 return arr;
 			 
 	 }
+	 /*It is used to input an String array*/
 	 public static String[] inputString() {
 		 System.out.println("Enter the value of n");
 		 int n=sc.nextInt();
@@ -58,22 +67,25 @@ public class util {
 			 arr[i]=sc.next();
 		 return arr;
 	 }
+	 /*It is used to Display an array*/
 	 public static void displayarr(int arr[]) {
 		 for(int i=0;i<arr.length;i++)
 			 System.out.println(arr[i]);
 	 }
+	 /*It is used to display array string*/
 	 public static void printArraystring(String str[]) 
 	 { 
 	     for (int i=0; i<str.length; i++) 
 	         System.out.print(str[i]+" "); 
 	 } 
 	 
-
+	 /*It is used to check the year id true or false*/
 	public static boolean isleap(int year) {
 		if(year%4==0 && year%100!=0 || year%400==0)
 			return true;
 		return false;
 	}
+	/*It is used to input an Two d array*/
 	public static int[][] TwodArray(){
 		System.out.println("Enter the value of m");
 		
@@ -88,6 +100,7 @@ public class util {
 			}
 		}return a;
 	}
+	/*It is used to check the day of week*/
 	public static String dayofweek(int d,int m,int y) {
 		String mon[]= {"sun","mon","thu","wed","thus","Fri","Sat"};
 		int  a=y-(14-m)/12;
@@ -99,16 +112,18 @@ public class util {
 		 return mon[e];
 		
 	}
+	/*It is used to find the Temp from cel to fer*/
 	public static float celtofer(float c) {
 		float a=(c*9/5)+32;
 		return a;
 	}
 	
-	
+	/*It is used to find out the from the fer to cel*/
 	public static float fertocel(float f) {
 		float b=(f-32)*5/9;
 		return b;
 	}
+	/*It is used to find payment*/
 	public static double montlypayment(float p,float y,float R) {
 		float n=12*y;
 		float r=R/(12*100);
@@ -116,6 +131,7 @@ public class util {
 		return pay;
 		
 	}
+	/*Used to find out the square root*/
 	public static double sqrt(int  c) {
 		double epsilon=1e-15;
 		double t=c;
@@ -124,10 +140,13 @@ public class util {
 		
 		}return t;
 	}
+	/*Used to input an boolean values*/
 	public static boolean inputboolean() {
 		boolean a=sc.nextBoolean();
 		return a;
 	}
+	
+	/*Used to  find out the  given string is an anagram or not*/
 	public static boolean anagram(String a,String b) {
 		int n1=a.length();
 		int n2=b.length();
