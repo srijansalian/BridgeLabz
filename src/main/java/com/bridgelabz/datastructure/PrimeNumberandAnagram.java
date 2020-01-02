@@ -1,13 +1,28 @@
 package com.bridgelabz.datastructure;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import com.bridgelabz.util.DataStructureUtility;
 
-
-public class PrimeNumber 
-	{
-
+public class PrimeNumberandAnagram extends PrimeNumber {
+	public static boolean anagram(String a,String b) {
+		int n1=a.length();
+		int n2=b.length();
+		if(n1!=n2)
+			return false;
+		char ar1[]=a.toCharArray();
+		char ar2[]=b.toCharArray();
+		Arrays.sort(ar1);/*Sorting of an array*/
+		Arrays.sort(ar2);
+		for(int i=0;i<ar1.length;i++) 
+			if(ar1[i]!=ar2[i])
+				return false;
+		
+		
+		return true;
+			
+	}
 	public static ArrayList<Integer> prime() 
 	{
 		ArrayList<Integer> lst = new ArrayList<Integer>();
@@ -20,6 +35,22 @@ public class PrimeNumber
 			}
 		}
 		return lst;
+		
+	}
+	public static ArrayList<Integer> angara(ArrayList<Integer> al){
+		ArrayList<Integer> al1=new ArrayList<Integer>();
+		for(int i=0;i<al.size();i++) 
+		{
+			for(int j=i;j<al.size();j++) 
+			{
+				if(i!=j) {
+					if(anagram(String.valueOf(al.get(i)),String.valueOf(al.get(j)))) {
+						al1.add(al.get(j));
+					}
+				}
+			}
+		}return al1;
+		
 		
 	}
 	public static void print2darray(int a[][]) 
@@ -41,10 +72,10 @@ public class PrimeNumber
 	}
 	private static int[][] primeDisplay(ArrayList<Integer> al) 
 	{ 
-		int a[][]=new int[10][168];
+		int a[][]=new int[10][57];
 		for(int i=0;i<a.length;i++) 
 		{
-			for(int j=0;j<168 ;j++) 
+			for(int j=0;j<a[i].length ;j++) 
 			{
 				if(i==0&&(al.get(j)>0&&al.get(j)<=100)) 
 					a[i][j] = al.get(j);
@@ -73,20 +104,21 @@ public class PrimeNumber
 		}return a;
 		
 	}
-	public static void main(String[] args) 
-	{
+	public static void anaprime(int a[][]){
+			
+	}
+	public static void main(String[] args) {
 		ArrayList<Integer> al=new ArrayList<Integer>();
+		ArrayList<Integer> al1=new ArrayList<Integer>();
+		int a[][]=new int[10][57];
 		al=prime();
-		int b[][]=new int[10][168];
-		b=primeDisplay(al);
-		print2darray(b);
+		//System.out.println(al);
+		al1=angara(al);
+		//System.out.println(al1);
+		a=primeDisplay(al1);
+		print2darray(a);
 		
+	
 	}
 
 }
-
-
-
-	
-
-
