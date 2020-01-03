@@ -1,47 +1,52 @@
 package com.bridgelabz.datastructure;
 
-import com.bridgelabz.datastructure.SinglyLinkedList.Node;
+//import com.bridgelabz.datastructure.SinglyLinkedList.Node;
 
-public class Stack {
-	class Node{
-		Object data;
-		Node next;
-		Node(Object data){
+public class Stack<T> {
+	
+	@SuppressWarnings("hiding")
+	class Node <T>{
+		T data;
+		Node<T>  next;
+		Node(T data){
 			this.data=data;
 		}
-	}Node head;
-public void push(Object data) {
-	Node n=new Node(data);
+	}Node<T> head;
+	int size=1;
+public void push(T data) {
+	Node<T> n=new Node<T>(data);
 	if(head==null) {
 		head=n;
 		return;
 	}
 	n.next=head;
 	head=n;
+	size++;
 }
-public Object pop()
+public T pop()
 {
 	if(head==null)
 	{
 		System.out.println("Stack Underflow");
 		return null;
 	}
-	Object data=head.data;
+	T data=(T) head.data;
 	head=head.next;
+	size--;
 	return data;
 }
-public Object peek()
+public T peek()
 {
 	if(head==null)
 	{
 		System.out.println("Stack underflow");
 		return null;
 	}
-	return head.data;
+	return (T) head.data;
 }
 public String toString() {
 	String st="[";
-	Node t=head;
+	Node<T> t=head;
 	while(t!=null)
 	{
 		st=st+t.data;
@@ -54,9 +59,9 @@ public String toString() {
 }
 public void reverse() 
 {
-	Node prev=null;
-	Node curr=head;
-	Node next=null;
+	Node<T> prev=null;
+	Node<T> curr=head;
+	Node<T> next=null;
 	while(curr!=null)
 	{
 		next=curr.next;
@@ -66,6 +71,12 @@ public void reverse()
 		
 	}
 	head=prev;
+	
 
 }
+public int size() {
+	// TODO Auto-generated method stub
+	return size;
+}
+
 }
