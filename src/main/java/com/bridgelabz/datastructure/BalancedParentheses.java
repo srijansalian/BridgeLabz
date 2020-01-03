@@ -38,7 +38,7 @@ public class BalancedParentheses {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		String str=util.inputWord();
 		boolean rs=isBalanced(str);
 		if(rs)

@@ -78,5 +78,8 @@ public int size() {
 	// TODO Auto-generated method stub
 	return size;
 }
+public boolean isEmpty() {
+	return (size==0);
+}
 
 }
