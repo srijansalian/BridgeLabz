@@ -1,5 +1,7 @@
 package com.bridgelabz.datastructure;
 
+import com.bridgelabz.datastructure.SinglyLinkedList.Node;
+
 public class Stack {
 	class Node{
 		Object data;
@@ -36,5 +38,34 @@ public Object peek()
 		return null;
 	}
 	return head.data;
+}
+public String toString() {
+	String st="[";
+	Node t=head;
+	while(t!=null)
+	{
+		st=st+t.data;
+		if(t.next!=null)
+			st=st+"->";
+		t=t.next;
+	
+	}
+	return st + "]";
+}
+public void reverse() 
+{
+	Node prev=null;
+	Node curr=head;
+	Node next=null;
+	while(curr!=null)
+	{
+		next=curr.next;
+		curr.next=prev;
+		prev=curr;
+		curr=next;
+		
+	}
+	head=prev;
+
 }
 }

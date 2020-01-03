@@ -8,20 +8,6 @@ import com.bridgelabz.util.DataStructureUtility;
 public class PrimeNumber 
 	{
 
-	public static ArrayList<Integer> prime() 
-	{
-		ArrayList<Integer> lst = new ArrayList<Integer>();
-		for(int i=2;i<=1000;i++) 
-		{
-			boolean s=DataStructureUtility.isPrime(i);
-			if(s) 
-			{
-				lst.add(i);
-			}
-		}
-		return lst;
-		
-	}
 	public static void print2darray(int a[][]) 
 	{
 		for(int i1=0;i1<a.length;i1++) 
@@ -39,7 +25,7 @@ public class PrimeNumber
 		
 		
 	}
-	private static int[][] primeDisplay(ArrayList<Integer> al) 
+	public static int[][] primeDisplay(ArrayList<Integer> al) 
 	{ 
 		int a[][]=new int[10][168];
 		for(int i=0;i<a.length;i++) 
@@ -76,7 +62,7 @@ public class PrimeNumber
 	public static void main(String[] args) 
 	{
 		ArrayList<Integer> al=new ArrayList<Integer>();
-		al=prime();
+		al=DataStructureUtility.prime();
 		int b[][]=new int[10][168];
 		b=primeDisplay(al);
 		print2darray(b);
