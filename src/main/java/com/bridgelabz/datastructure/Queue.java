@@ -2,14 +2,15 @@ package com.bridgelabz.datastructure;
 
 //import com.bridgelabz.util.DataStructureUtility.Node;
 
-public class Queue {
- Node front , rear;
+public class Queue<T> {
+ Node<T> front , rear;
  
- class Node{
-	 Node next;
-	 Object data;
+ @SuppressWarnings("hiding")
+class Node<T>{
+	 Node<T> next;
+	 T data;
 	 
-	 public Node(Object data){
+	 public Node(T data){
 		 this.data=data;
 		 
 	 }
@@ -18,8 +19,8 @@ public class Queue {
  public Queue() {
 	 this.front=this.rear=null;
  }
-public  void enqueue(Object data) {
-	 Node temp=new Node(data);
+public  void enqueue(T data) {
+	 Node<T> temp=new Node<T>(data);
 	 if(this.rear==null)
 	 {
 		 this.front=this.rear=temp;
@@ -29,10 +30,10 @@ public  void enqueue(Object data) {
 	 this.rear=temp;
  }
  
- public Node dequeue() {
+ public Node<T> dequeue() {
 	 if(this.front==null)
 		 return null;
-	 Node temp=this.front;
+	 Node<T> temp=this.front;
 	 this.front=this.front.next;
 	 
 	 if(this.front==null)
@@ -41,7 +42,7 @@ public  void enqueue(Object data) {
  }
  public String toString() {
 		String st="[";
-		Node t=front;
+		Node<T> t=front;
 		while(t!=null)
 		{
 			st=st+t.data;
