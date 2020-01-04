@@ -1,8 +1,4 @@
 package com.bridgelabz.datastructure;
-
-
-
-
 import com.bridgelabz.util.util;
 
 public class BinarySearchTree {
