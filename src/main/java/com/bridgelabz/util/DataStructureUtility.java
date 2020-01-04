@@ -309,6 +309,21 @@ import java.io.FileWriter;
 		
 		
 	}
+	/*It is used to input an Array*/
+	 
+	 public static int[] inputArray() {
+		 
+		 
+		 System.out.println("Enter the value of n");
+		 int n=sc.nextInt();
+		 int arr[]=new int[n];
+		// System.out.println("Enter the values");
+		 for(int i=0;i<n;i++)
+			 
+			arr[i]=sc.nextInt();
+		 return arr;
+			 
+	 }
 	
 
 }
