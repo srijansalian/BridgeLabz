@@ -1,6 +1,6 @@
 package com.bridgelabz.datastructure;
 
-import com.bridgelabz.datastructure.Queue.Node;
+//import com.bridgelabz.datastructure.Queue.Node;
 import com.bridgelabz.util.util;
 
 public class BankersProblem {
@@ -23,7 +23,7 @@ public class BankersProblem {
 				     System.out.println("Enter the Amount to withdraw");
 				     double uamt = util.inputDouble();
 				     amt1 = amt1 - uamt;
-				     System.out.println("The remaining amounts are"+amt1);
+				     System.out.println("The remaining amounts are "+amt1);
 				     break;
 			
 			case "D":System.out.println("Enter the name of the user:");
@@ -32,7 +32,7 @@ public class BankersProblem {
 			         System.out.println("Enter the Amount To deposite");
 			         double u1amt = util.inputDouble();
 			         amt1=amt1+u1amt;
-			         System.out.println("The amount of the deposite is"+u1amt);
+			         System.out.println("The amount of the deposite is "+u1amt);
 			         break;
 			         
 			 default:System.out.println("Invalid Input....!!!!Enter Correctly");
@@ -43,14 +43,11 @@ public class BankersProblem {
 			
 		}
 		for(int i=1;i<=n;i++) {
-			Node str=sk.dequeue();
+			Queue<String>.Node<String> str=sk.dequeue();
 			System.out.println(str+" is deleted");
 			
 		}
 		
-		
-		
-
 	}
 
 }
