@@ -18,14 +18,12 @@ public class FilereadUnorderedList<T> {
 			}
 			// printing list
 			System.out.println(list);
-			/*
-			 * writing to file using file writer
-			 */
+			
 			FileWriter fw = new FileWriter(f1);
 			System.out.println("enter a word ");
 			String s1 = s.nextLine();
 			System.out.println(list.size());
-			// checking if word is found and deleting it and then saving list to file
+			
 			if (list.search(s1)) {
 				list.remove(s1);
 				int n = 0;

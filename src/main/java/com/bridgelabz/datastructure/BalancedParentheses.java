@@ -38,7 +38,7 @@ public class BalancedParentheses {
 	}
 
 	public static void main(String[] args) {
-		
+		System.out.println("Enter the string");
 		String str=util.inputWord();
 		boolean rs=isBalanced(str);
 		if(rs)

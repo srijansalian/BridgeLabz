@@ -1,4 +1,5 @@
 package com.bridgelabz.datastructure;
+/*Creating an for a single linked list */ 
 
 public class SinglyLinkedList<T> {
 	int size=0;
@@ -14,6 +15,10 @@ public class SinglyLinkedList<T> {
 	}
 	Node<T> head;
 
+	
+	          /* Adds new Elements into the list   */
+	
+	
 public boolean add(T data)
 {
 	Node<T> n=new Node<T>(data);
@@ -31,6 +36,9 @@ public boolean add(T data)
 	size+=1;
 	return true;
 }
+
+/*Overriding method of toString*/
+
 public String toString() {
 	String st="[";
 	Node<T> t=head;
@@ -44,6 +52,9 @@ public String toString() {
 	}
 	return st + "]";
 }
+
+/* This method id used  to add the node at the beginning of the list */
+
 public boolean addfirst(T data)
 {
 	Node<T> n=new Node<T>(data);
@@ -52,6 +63,9 @@ public boolean addfirst(T data)
 	size+=1;
 	return true;
 }
+
+/*Delete first is used to delete the elements*/
+
 public T deletefirst() {
 	if(head==null)
 	{
@@ -63,6 +77,9 @@ public T deletefirst() {
 	size-=1;
 	return (T) data;
 }
+
+/*  The elements delete the node at the end the list */
+
 
 public T deleteLast() {
 	if(head==null)
@@ -85,6 +102,7 @@ public T deleteLast() {
 	return t.data;
 	
 }
+ /* Remove's an data from the given list*/
 public void remove(T item) {
 	Node<T> n = head;
 	Node<T> prev = null;
@@ -102,6 +120,9 @@ public void remove(T item) {
 	n = null;
 	size -= 1;
 }
+
+/* The method is used to remove the element at the end node */
+
 public void removeAtLast() {
 	Node<T> n = head;
 	Node<T> prev = null;
@@ -109,11 +130,12 @@ public void removeAtLast() {
 		prev = n;
 		n = n.next;
 	}
-	//System.out.println("hheeyy");
-	// remove the node as last node
 	prev.next = null;
 	size--;
 }
+
+/* The method is used to check the key element is present in the node*/
+
 public boolean search(T item) {
 	Node<T> n = head;
 	while (n.next != null) {
@@ -124,17 +146,28 @@ public boolean search(T item) {
 	}
 	return false;
 }
+
+/* The method is used check whether the node is null or not*/
+
+
 public boolean isEmpty() {
 	if (head == null) {
 		return true;
 	}
 	return false;
 }
+
+/* The method is check the size of the node*/
+
 public int size() {
 	return size;
 }
+
+/* Removes and returns last item in the list*/
+
+
 public T pop() {
-	Node n = head;
+	Node<T> n = head;
 	if (size == 1) {
 		head = head.next;
 		size--;
