@@ -1,6 +1,11 @@
 package com.bridgelabz.datastructure;
 
-//import com.bridgelabz.datastructure.SinglyLinkedList.Node;
+/****
+ * 	
+ * @author Srijan Salian
+ *Implementing the stack operation
+ * @param <T>
+ */
 
 public class Stack<T> {
 	
@@ -13,6 +18,13 @@ public class Stack<T> {
 		}
 	}Node<T> head;
 	int size=1;
+	
+	/****
+	 * Used for an push operation.
+	 * @param data
+	 */
+	
+	
 public void push(T data) {
 	Node<T> n=new Node<T>(data);
 	if(head==null) {
@@ -23,6 +35,11 @@ public void push(T data) {
 	head=n;
 	size++;
 }
+
+/****
+ * pop operation is carried out.
+ * @return data 
+ */
 public T pop()
 {
 	if(head==null)
@@ -35,6 +52,11 @@ public T pop()
 	size--;
 	return data;
 }
+
+/****
+ * Peek operation is retrieve the data
+ * @return data
+ */
 public T peek()
 {
 	if(head==null)
@@ -44,6 +66,10 @@ public T peek()
 	}
 	return (T) head.data;
 }
+
+/*****
+ * An overloaded method of the toString
+ */
 public String toString() {
 	String st="[";
 	Node<T> t=head;
@@ -57,6 +83,9 @@ public String toString() {
 	}
 	return st + "]";
 }
+/***
+ * Reverse of an Node
+ */
 public void reverse() 
 {
 	Node<T> prev=null;
@@ -74,10 +103,18 @@ public void reverse()
 	
 
 }
+/**
+ * To find out the size of the node
+ * @return size
+ */
 public int size() {
-	// TODO Auto-generated method stub
+	
 	return size;
 }
+
+/*
+ * Checks the node is a empty or not
+ */
 public boolean isEmpty() {
 	return (size==0);
 }

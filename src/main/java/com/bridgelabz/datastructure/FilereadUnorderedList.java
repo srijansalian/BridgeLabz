@@ -1,7 +1,7 @@
 package com.bridgelabz.datastructure;
 import java.io.*;
 import java.util.Scanner;
-import com.bridgelabz.util.DataStructureUtility;
+
 
 public class FilereadUnorderedList<T> {
 
@@ -9,7 +9,7 @@ public class FilereadUnorderedList<T> {
 		try {
 			
 		File f1 = new File("C:\\Users\\Srijan Salian\\Desktop\\1.txt");
-		SinglyLinkedList<String> list = new SinglyLinkedList<>();
+		SinglyLinkedList<String> list = new SinglyLinkedList<String>();
 		
 			Scanner sf = new Scanner(f1);
 			Scanner s = new Scanner(System.in);
@@ -20,7 +20,7 @@ public class FilereadUnorderedList<T> {
 			System.out.println(list);
 			
 			FileWriter fw = new FileWriter(f1);
-			System.out.println("enter a word ");
+			System.out.println("Enter a word ");
 			String s1 = s.nextLine();
 			System.out.println(list.size());
 			
@@ -45,6 +45,7 @@ public class FilereadUnorderedList<T> {
 				System.out.println("added and saved");
 				fw.close();
 				s.close();
+				sf.close();
 			}
 
 		} catch (FileNotFoundException e) {
