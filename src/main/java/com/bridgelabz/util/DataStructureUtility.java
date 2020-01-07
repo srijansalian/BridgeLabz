@@ -1,5 +1,6 @@
 package com.bridgelabz.util;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
@@ -324,7 +325,19 @@ import java.io.FileWriter;
 		 return arr;
 			 
 	 }
-	
+	 public static String readFile(String path) throws IOException {
+			String str = "";
+			BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
+			str = bufferedReader.readLine();
+			bufferedReader.close();
+			return str;
+		}
+	 public static String writeFile(String path, String str) throws IOException {
+			BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path));
+			bufferedWriter.write(str);
+			bufferedWriter.close();
+			return "\nFile is Written...";
+		}
 
 }
 
