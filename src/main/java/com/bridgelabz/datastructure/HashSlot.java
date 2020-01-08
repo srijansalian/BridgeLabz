@@ -1,19 +1,18 @@
 package com.bridgelabz.datastructure;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.HashMap;
+
 import java.util.Scanner;
 
 import com.bridgelabz.util.DataStructureUtility;
 
-//import com.bridgelabz.handler.HashMap;
-//import com.bridgelabz.utility.DataStructureUtility;
+
 
 public class HashSlot {
 static int[] arr;
 
 	public static void main(String[] args) {
-		DataStructureUtility utility = new DataStructureUtility();
+		
 		Hashmap<Integer, Integer> hashmap = new Hashmap<Integer, Integer>();
 		String readMessage = "";
 		try {
@@ -28,7 +27,7 @@ static int[] arr;
 			arr[i] = Integer.parseInt(str[i]);
 		}
 		System.out.println(Arrays.toString(arr));
-		System.out.println("Getting keys");
+		System.out.println("Keys Are");
 		for (int i = 0; i < arr.length; i++) {
 			hashmap.add(arr[i], arr[i]);
 		}

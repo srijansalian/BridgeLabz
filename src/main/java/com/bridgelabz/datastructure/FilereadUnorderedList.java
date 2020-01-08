@@ -33,7 +33,7 @@ public class FilereadUnorderedList<T> {
 					n++;
 				}
 				System.out.println("found and deleted");
-				// or adding it to list and saving it to file
+				
 			} else {
 				list.add(s1);
 				int n = 0;

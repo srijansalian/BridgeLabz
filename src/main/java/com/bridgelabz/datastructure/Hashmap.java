@@ -104,7 +104,6 @@ import java.util.ArrayList;
 				if (head.key.equals(key))
 					break;
 
-				
 				prev = head;
 				head = head.next;
 			}
@@ -131,7 +130,7 @@ import java.util.ArrayList;
 			for (int i = 0; i < arrList.size(); i++) {
 				try {
 					if (!(arrList.get(i) == null)) {
-						System.out.println("\narray index : " + i);
+						System.out.println(i);
 						HashNode<K, V> head = arrList.get(i);
 						while (head != null) {
 							System.out.print(head.value + " ");
@@ -155,7 +154,7 @@ import java.util.ArrayList;
 			for (int i = 0; i < arrList.size(); i++) {
 				try {
 					if (!(arrList.get(i) == null)) {
-						str += "\narray index : " + i;
+						str +=  i;
 						HashNode<K, V> head = arrList.get(i);
 						while (head != null) {
 							str += head.value + " ";

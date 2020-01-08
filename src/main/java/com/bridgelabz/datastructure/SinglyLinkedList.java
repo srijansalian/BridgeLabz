@@ -162,10 +162,7 @@ public boolean isEmpty() {
 public int size() {
 	return size;
 }
-
 /* Removes and returns last item in the list*/
-
-
 public T pop() {
 	Node<T> n = head;
 	if (size == 1) {

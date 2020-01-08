@@ -1,7 +1,4 @@
 package com.bridgelabz.datastructure;
-
-//import com.bridgelabz.util.DataStructureUtility.Node;
-
 public class Queue<T> {
  Node<T> front , rear;
  

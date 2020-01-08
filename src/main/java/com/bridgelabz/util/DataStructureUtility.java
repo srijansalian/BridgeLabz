@@ -4,36 +4,12 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.text.ParseException;
-import java.util.Date;
-//import com.bridgelabz.model.Stock;
 import java.util.ArrayList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import com.bridgelabz.datastructure.Node;
-
-//import com.bridgelabz.datastructure.SinglyLinkedList.Node;
-
-//import com.bridgelabz.model.UserDetails;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Random;
 import java.io.File;
 import java.io.FileWriter;
-//import com.bridgelabz.utility.SortingFunction;
 
-	import java.io.BufferedReader;
-	import java.io.FileReader;
-	import java.io.IOException;
-	import java.io.InputStreamReader;
 	import java.util.Arrays;
 	import java.util.Scanner;
-	
-	
-
 	public class DataStructureUtility<T> {
 		BufferedReader br;
 		static BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));;
@@ -81,9 +57,7 @@ import java.io.FileWriter;
 				}
 			}
 			
-			//this function take two parameter 
-			// 1 what data to write.
-			// 2 file name
+
 			public void writeToFile(String data,String fileName)throws Exception{
 				File file = new File(fileName);
 				if (!file.exists()) {

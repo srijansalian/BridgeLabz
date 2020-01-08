@@ -3,7 +3,7 @@ package com.bridgelabz.datastructure;
 public class QueueRunner {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		Queue q=new Queue();
 		q.enqueue(12589);
 		q.enqueue("hello");

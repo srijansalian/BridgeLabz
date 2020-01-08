@@ -6,10 +6,6 @@ import java.util.Arrays;
 import com.bridgelabz.util.DataStructureUtility;
 
 public class PrimeNumberandAnagram extends PrimeNumber {
-		
-	
-	
-	
 	public static void anaprime(int a[][]){
 			
 	}
