@@ -8,5 +8,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="lib" path="C:/Users/Srijan Salian/Downloads/jackson-core-asl-1.9.13.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Srijan Salian/Downloads/jackson-mapper-asl-1.9.13.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

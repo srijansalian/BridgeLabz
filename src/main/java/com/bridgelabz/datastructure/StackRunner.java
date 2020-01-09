@@ -10,6 +10,7 @@ public class StackRunner {
 		stk.push(2566);
 		stk.push(259);
 		stk.push(1255);
+		stk.pop();
 		System.out.println(stk);
 
 	}
