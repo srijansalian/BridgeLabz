@@ -1,7 +1,7 @@
 package com.bridgelabz.datastructure;
 import java.io.*;
 import java.util.Scanner;
-
+                                
 
 public class FilereadUnorderedList<T> {
 
@@ -18,7 +18,7 @@ public class FilereadUnorderedList<T> {
 			}
 			// printing list
 			System.out.println(list);
-			
+			System.out.println();
 			FileWriter fw = new FileWriter(f1);
 			System.out.println("Enter a word ");
 			String s1 = s.nextLine();
