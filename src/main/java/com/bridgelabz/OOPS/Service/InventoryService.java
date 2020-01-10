@@ -5,7 +5,7 @@ public class InventoryService {
 	private int weight;
 	private int weight_per_kg;
 	private int totalprize;
-	public String getName() {
+	public String getName()     {
 		return name;
 	}
 	public void setName(String name) {
