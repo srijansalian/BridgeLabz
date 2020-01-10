@@ -3,6 +3,7 @@ import com.bridgelabz.util.util;
 
 public class Flipcoin {
 	static void flip(int n) {
+		@SuppressWarnings("unused")
 		int head=0,tail=0;
 		for(int i=1;i<=n;i++) {
 			double z=Math.random();
