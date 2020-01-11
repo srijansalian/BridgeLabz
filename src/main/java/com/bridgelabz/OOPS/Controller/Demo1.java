@@ -19,7 +19,10 @@ public class Demo1 {
 		{
 			Object obj=parser.parse(new FileReader("MyJSON.json"));
 			JSONObject jsonobject=(JSONObject)obj;
-			
+			String name=(String)jsonobject.get("Name");
+			System.out.println("Name : "+name);
+			String location=(String)jsonobject.get("Location");
+			System.out.println("Location is : "+location);
 			
 			//creating a object of json array
 			
