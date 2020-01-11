@@ -29,6 +29,7 @@ public class InventoryServiceImp implements InventoryInf{
 				jsonObject.put("name", scanner.next());
 				jsonObject.put("weight", scanner.nextInt());
 				jsonObject.put("price", scanner.nextInt());
+				System.out.println("=================================================================");
 				array.add(jsonObject);
 			}			
 			finalObject.put(name , array);
