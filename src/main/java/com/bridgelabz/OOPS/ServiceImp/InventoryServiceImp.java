@@ -14,16 +14,16 @@ public class InventoryServiceImp implements InventoryInf{
 	@SuppressWarnings("unchecked")
 	public void writeData() {
 		
-		Scanner scanner = new Scanner(System.in);	//	scanner to get user input
-		String[] names = new String[] {"Rice" , "Wheat" , "Pulses"};	//	inventory array
+		Scanner scanner = new Scanner(System.in);	
+		String[] names = new String[] {"Rice" , "Wheat" , "Pulses"};	
 		
-		JSONObject finalObject = new JSONObject();	//	json object to write data
-		for (String name : names) {	//	getting data for every inventory
+		JSONObject finalObject = new JSONObject();	
+		for (String name : names) {	
 			System.out.print("Enter number of types of " + name + " : ");
-			int count = scanner.nextInt();	//	types of every inventory
-			JSONArray array = new JSONArray();	//	array to store types
+			int count = scanner.nextInt();	
+			JSONArray array = new JSONArray();
 			
-			for(int i = 0; i < count; i++) {	//	 object for every type
+			for(int i = 0; i < count; i++) {	
 				JSONObject jsonObject  = new JSONObject();
 				System.out.print("Enter name, weight and price: ");
 				jsonObject.put("name", scanner.next());
@@ -35,9 +35,9 @@ public class InventoryServiceImp implements InventoryInf{
 			finalObject.put(name , array);
 		}
 		scanner.close();
-		PrintWriter printWriter = null;	//	to write data to the file
+		PrintWriter printWriter = null;	
 		try {
-			printWriter = new PrintWriter("/home/user/eclipse-workspace/Bridgelbz/src/main/java/com/bridgelabz/OOPS/Repo/inventory.json");
+			printWriter = new PrintWriter("/home/user/eclipse-workspace/Bridgelbz/src/main/java/com/bridgelabz/OOPS/Repo/Inventory.json");
 		} catch (FileNotFoundException e) {
 			
 			e.printStackTrace();
@@ -50,9 +50,9 @@ public class InventoryServiceImp implements InventoryInf{
 	@Override
  public void readData() {
 		
-		JSONArray array = new JSONArray();	//	array to get json data from file
-		JSONParser parser = new JSONParser();	//	parser to parse data from file
-		JSONObject object;// json object to store every type of inventory
+		JSONArray array = new JSONArray();	
+		JSONParser parser = new JSONParser();	
+		JSONObject object;
 	
 		
 		try {

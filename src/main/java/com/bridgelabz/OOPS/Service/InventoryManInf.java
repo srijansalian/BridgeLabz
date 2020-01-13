@@ -1,6 +1,6 @@
 package com.bridgelabz.OOPS.Service;
 
-public interface InventoryMan {
+public interface InventoryManInf {
 	void writeData();
 	void readData();
 

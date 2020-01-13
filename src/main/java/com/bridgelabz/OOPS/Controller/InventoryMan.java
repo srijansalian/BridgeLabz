@@ -5,27 +5,26 @@ import java.util.Iterator;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-import com.bridgelabz.OOPS.ServiceImp.InventoryServiceImp;
+import com.bridgelabz.OOPS.ServiceImp.InventoryManServiceImp;
+
 
 public class InventoryMan {
 
 
 		public static long getValue(JSONArray array){
-			Iterator<?> iterator = array.iterator();	//	iterator to iterate
-			long value = 0;	//	inventory value
+			Iterator<?> iterator = array.iterator();	
+			long value = 0;
 			while(iterator.hasNext()) {
 				JSONObject obj = (JSONObject)iterator.next();
 				long weight = (long)obj.get("weight");
 				long price = (long)obj.get("price");
-				value = value + weight * price;	//	adding value
+				value = value + weight * price;	
 			}
 			return value;
 		}
 		
 		public static void main(String[] args) {
-
-					//	class object
-				InventoryServiceImp inven = new InventoryServiceImp();
+				InventoryManServiceImp inven = new InventoryManServiceImp();
 				inven.writeData();	
 				inven.readData();	
 				

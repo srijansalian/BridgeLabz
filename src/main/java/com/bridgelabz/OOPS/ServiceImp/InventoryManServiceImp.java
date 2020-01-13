@@ -1,23 +1,20 @@
 package com.bridgelabz.OOPS.ServiceImp;
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
-
+import com.bridgelabz.OOPS.Controller.*;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-
-import com.bridgelabz.OOPS.Controller.Inventoryy;
-
-public class InventoryManServiceImp {
+import com.bridgelabz.OOPS.Service.*;
+public class InventoryManServiceImp implements InventoryManInf {
 	@SuppressWarnings("unchecked")
 	public void writeData() {
 		
-		Scanner scanner = new Scanner(System.in);	//	scanner to get user input
-		String[] names = new String[] {"Rice" , "Wheat" , "Pulses"};	//	inventory array
+		Scanner scanner = new Scanner(System.in);	
+		String[] names = new String[] {"Rice" , "Wheat" , "Pulses"};	
 		
 		JSONObject finalObject = new JSONObject();	//	json object to write data
 		for (String name : names) {	//	getting data for every inventory
@@ -39,7 +36,7 @@ public class InventoryManServiceImp {
 		scanner.close();
 		PrintWriter printWriter = null;	//	to write data to the file
 		try {
-			printWriter = new PrintWriter("/home/user/eclipse-workspace/Bridgelbz/src/main/java/com/bridgelabz/OOPS/Repo/inventory.json");
+			printWriter = new PrintWriter("/home/user/eclipse-workspace/Bridgelbz/src/main/java/com/bridgelabz/OOPS/Repo/InventoryMAN.json");
 		} catch (FileNotFoundException e) {
 			
 			e.printStackTrace();
@@ -52,19 +49,27 @@ public class InventoryManServiceImp {
 	@Override
  public void readData() {
 		
-		JSONArray array = new JSONArray();	//	array to get json data from file
-		JSONParser parser = new JSONParser();	//	parser to parse data from file
-		JSONObject object;// json object to store every type of inventory
+		JSONArray array = new JSONArray();	
+		//JSONArray grand = new JSONArray();
+		JSONParser parser = new JSONParser();	
+		JSONObject object;
+		long a,b,c = 0;
+		long grand;
 	
 		
 		try {
 			object = (JSONObject) parser.parse(new FileReader("/home/user/eclipse-workspace/Bridgelbz/src/main/java/com/bridgelabz/OOPS/Repo/inventory.json"));
 			array = (JSONArray) object.get("Rice");
 			System.out.println("Rice inventory value: " + Inventoryy.getValue(array));
+			a = Inventoryy.getValue(array);
 			array = (JSONArray) object.get("Pulses");
 			System.out.println("Pulses inventory value: " + Inventoryy.getValue(array));
+			b = Inventoryy.getValue(array);
 			array = (JSONArray) object.get("Wheat");
 			System.out.println("Wheat inventory value: " +Inventoryy.getValue(array));
+			c = Inventoryy.getValue(array);
+			grand=a+b+c;
+			System.out.println("The Grand Total of an Inventory is : "+grand);
 		}
 		catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -75,6 +80,5 @@ public class InventoryManServiceImp {
 		}
 		
 	}
-	
 
 }
