@@ -1,18 +1,1 @@
-{
-	"inventory": [{
-			"name": "rice",
-			"weight": 5,
-			"price_per_kg": 30
-		},
-		{
-			"name": "rice",
-			"weight": 5,
-			"price_per_kg": 30
-		},
-		{
-			"name": "rice",
-			"weight": 5,
-			"price_per_kg": 30
-		}
-	]
-}
+{"Wheat":[{"price":36,"name":"Regular","weight":12}],"Pulses":[{"price":95,"name":"Regular","weight":28}],"Rice":[{"price":63,"name":"Boiled","weight":23}]}

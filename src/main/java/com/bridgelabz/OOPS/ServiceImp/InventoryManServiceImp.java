@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 import com.bridgelabz.OOPS.Controller.*;
+import com.bridgelabz.OOPS.Model.InventoryManModel;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -16,13 +18,13 @@ public class InventoryManServiceImp implements InventoryManInf {
 		Scanner scanner = new Scanner(System.in);	
 		String[] names = new String[] {"Rice" , "Wheat" , "Pulses"};	
 		
-		JSONObject finalObject = new JSONObject();	//	json object to write data
-		for (String name : names) {	//	getting data for every inventory
+		JSONObject finalObject = new JSONObject();	
+		for (String name : names) {	
 			System.out.print("Enter number of types of " + name + " : ");
-			int count = scanner.nextInt();	//	types of every inventory
-			JSONArray array = new JSONArray();	//	array to store types
+			int count = scanner.nextInt();	
+			JSONArray array = new JSONArray();	
 			
-			for(int i = 0; i < count; i++) {	//	 object for every type
+			for(int i = 0; i < count; i++) {	
 				JSONObject jsonObject  = new JSONObject();
 				System.out.print("Enter name, weight and price: ");
 				jsonObject.put("name", scanner.next());
@@ -50,7 +52,7 @@ public class InventoryManServiceImp implements InventoryManInf {
  public void readData() {
 		
 		JSONArray array = new JSONArray();	
-		//JSONArray grand = new JSONArray();
+		
 		JSONParser parser = new JSONParser();	
 		JSONObject object;
 		long a,b,c = 0;
@@ -58,6 +60,7 @@ public class InventoryManServiceImp implements InventoryManInf {
 	
 		
 		try {
+			InventoryManModel Inmodel = new InventoryManModel();
 			object = (JSONObject) parser.parse(new FileReader("/home/user/eclipse-workspace/Bridgelbz/src/main/java/com/bridgelabz/OOPS/Repo/inventory.json"));
 			array = (JSONArray) object.get("Rice");
 			System.out.println("Rice inventory value: " + Inventoryy.getValue(array));
@@ -69,7 +72,9 @@ public class InventoryManServiceImp implements InventoryManInf {
 			System.out.println("Wheat inventory value: " +Inventoryy.getValue(array));
 			c = Inventoryy.getValue(array);
 			grand=a+b+c;
-			System.out.println("The Grand Total of an Inventory is : "+grand);
+			Inmodel.setGrand(grand);
+			
+			System.out.println("The Grand Total of an Inventory is : "+Inmodel.getGrand());
 		}
 		catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -81,4 +86,5 @@ public class InventoryManServiceImp implements InventoryManInf {
 		
 	}
 
+	
 }

@@ -1,47 +1,27 @@
 package com.bridgelabz.OOPS.Model;
 
 public class InventoryModel {
-	private String Rice;
-	private String pluses;
-	private String wheat;
-	public String getRice() {
-		return Rice;
-	}
-	public void setRice(String rice) {
-		Rice = rice;
-	}
-	public String getPluses() {
-		return pluses;
-	}
-	public void setPluses(String pluses) {
-		this.pluses = pluses;
-	}
-	public String getWheat() {
-		return wheat;
-	}
-	public void setWheat(String wheat) {
-		this.wheat = wheat;
-	}
-	public int getWeight() {
+	private long weight;
+	public long getWeight() {
 		return weight;
 	}
-	public void setWeight(int weight) {
-		this.weight = weight;
+	public void setWeight(long weight2) {
+		this.weight = weight2;
 	}
-	public int getWeight_per_kg() {
-		return weight_per_kg;
+	private long price;
+	public long getPrice() {
+		return price;
 	}
-	public void setWeight_per_kg(int weight_per_kg) {
-		this.weight_per_kg = weight_per_kg;
+	public void setPrice(long price) {
+		this.price = price;
 	}
-	public int getTotalprize() {
-		return totalprize;
+	private long value;
+	public long getValue() {
+		return value;
 	}
-	public void setTotalprize(int totalprize) {
-		this.totalprize = totalprize;
+	public void setValue(long value) {
+		this.value = value;
 	}
-	private int weight;
-	private int weight_per_kg;
-	private int totalprize;
-
+	
+	
 }

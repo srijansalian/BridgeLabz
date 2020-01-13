@@ -27,8 +27,8 @@ public class InventoryServiceImp implements InventoryInf{
 				JSONObject jsonObject  = new JSONObject();
 				System.out.print("Enter name, weight and price: ");
 				jsonObject.put("name", scanner.next());
-				jsonObject.put("weight", scanner.nextInt());
-				jsonObject.put("price", scanner.nextInt());
+				jsonObject.put("weight", scanner.nextLong());
+				jsonObject.put("price", scanner.nextLong());
 				System.out.println("=================================================================");
 				array.add(jsonObject);
 			}			
@@ -59,8 +59,10 @@ public class InventoryServiceImp implements InventoryInf{
 			object = (JSONObject) parser.parse(new FileReader("/home/user/eclipse-workspace/Bridgelbz/src/main/java/com/bridgelabz/OOPS/Repo/inventory.json"));
 			array = (JSONArray) object.get("Rice");
 			System.out.println("Rice inventory value: " + Inventoryy.getValue(array));
+			
 			array = (JSONArray) object.get("Pulses");
 			System.out.println("Pulses inventory value: " + Inventoryy.getValue(array));
+			
 			array = (JSONArray) object.get("Wheat");
 			System.out.println("Wheat inventory value: " +Inventoryy.getValue(array));
 		}
