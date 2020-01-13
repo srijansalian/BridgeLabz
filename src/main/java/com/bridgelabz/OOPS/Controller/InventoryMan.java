@@ -1,18 +1,15 @@
 package com.bridgelabz.OOPS.Controller;
-
 import java.util.Iterator;
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-
 import com.bridgelabz.OOPS.Model.InventoryManModel;
-
 import com.bridgelabz.OOPS.ServiceImp.InventoryManServiceImp;
-
-
 public class InventoryMan {
-
-
+	/**
+	 * Method to Calculate the Total value
+	 * @param array
+	 * @return Total 
+	 */
 		public static long getValue(JSONArray array){
 			InventoryManModel InModel = new InventoryManModel();
 			Iterator<?> iterator = array.iterator();	
@@ -30,7 +27,9 @@ public class InventoryMan {
 			}
 			 return InModel.getValue();
 		}
-		
+		/*
+		 * Main method
+		 */
 		public static void main(String[] args) {
 				InventoryManServiceImp inven = new InventoryManServiceImp();
 				inven.writeData();	

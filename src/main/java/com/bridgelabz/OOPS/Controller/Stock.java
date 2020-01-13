@@ -1,15 +1,17 @@
 package com.bridgelabz.OOPS.Controller;
-
 import java.util.Iterator;
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-
 import com.bridgelabz.OOPS.Model.StockModel;
 import com.bridgelabz.OOPS.ServiceImp.StockImp;
-
 public class Stock {
+	/**
+	 * Method to Calculate the Total value
+	 * @param array
+	 * @return Total 
+	 */
 	public static long getvalue(JSONArray array) {
+		@SuppressWarnings("unchecked")
 		Iterator<Object> iterator = array.iterator();
 		StockModel SM = new StockModel();
 		long total=0;
@@ -34,10 +36,11 @@ public class Stock {
 			grand = grand+ total;
 			SM.setGrand(grand);
 		}
-		
 		return SM.getGrand();
-		
 	}
+	/*
+	 * Main Method
+	 */
 
 	public static void main(String[] args) {
 		StockImp SI = new StockImp();

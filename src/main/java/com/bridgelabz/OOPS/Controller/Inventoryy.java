@@ -6,7 +6,10 @@ import org.json.simple.JSONObject;
 import com.bridgelabz.OOPS.Model.InventoryModel;
 import com.bridgelabz.OOPS.ServiceImp.InventoryServiceImp;
 public class Inventoryy {
-	
+	/*
+	 * @param array
+	 * @return Total value
+	 */
 	public static long getValue(JSONArray array){
 		InventoryModel InModel = new InventoryModel();
 		Iterator<?> iterator = array.iterator();	
@@ -22,12 +25,13 @@ public class Inventoryy {
 			System.out.println("Price : "+InModel.getPrice());
 			value = value + weight * price;	
 			InModel.setValue(value);
-			
-			
+		
 		}
 		return InModel.getValue();
 	}
-	
+	/*
+	 * Main Method 
+	 */
 	public static void main(String[] args) {
 			InventoryServiceImp inven = new InventoryServiceImp();
 			inven.writeData();	

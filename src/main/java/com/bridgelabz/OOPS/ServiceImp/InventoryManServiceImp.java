@@ -13,12 +13,15 @@ import org.json.simple.parser.JSONParser;
 import com.bridgelabz.OOPS.Service.*;
 public class InventoryManServiceImp implements InventoryManInf {
 	@SuppressWarnings("unchecked")
+	/*
+	 * Method to write JSON Object
+	 */
 	public void writeData() {
 		
 		Scanner scanner = new Scanner(System.in);	
 		String[] names = new String[] {"Rice" , "Wheat" , "Pulses"};	
 		
-		JSONObject finalObject = new JSONObject();	
+		JSONObject finalObject = new JSONObject();	//Creating of an Object
 		for (String name : names) {	
 			System.out.print("Enter number of types of " + name + " : ");
 			int count = scanner.nextInt();	
@@ -27,11 +30,11 @@ public class InventoryManServiceImp implements InventoryManInf {
 			for(int i = 0; i < count; i++) {	
 				JSONObject jsonObject  = new JSONObject();
 				System.out.print("Enter name, weight and price: ");
-				jsonObject.put("name", scanner.next());
+				jsonObject.put("name", scanner.next());    // Accepting the user Inputs
 				jsonObject.put("weight", scanner.nextInt());
 				jsonObject.put("price", scanner.nextInt());
 				System.out.println("=================================================================");
-				array.add(jsonObject);
+				array.add(jsonObject); //Inserting the JSONObject into an JSONArray
 			}			
 			finalObject.put(name , array);
 		}
@@ -43,12 +46,16 @@ public class InventoryManServiceImp implements InventoryManInf {
 			
 			e.printStackTrace();
 		}
-		printWriter.write(finalObject.toJSONString());
+		printWriter.write(finalObject.toJSONString());//Used to write into an file
 		printWriter.close();
 		
 	}
 
 	@Override
+	/*
+	 * Method to read the JSON Object 
+	 * Calculate the Grand total
+	 */
  public void readData() {
 		
 		JSONArray array = new JSONArray();	
@@ -63,8 +70,8 @@ public class InventoryManServiceImp implements InventoryManInf {
 			InventoryManModel Inmodel = new InventoryManModel();
 			object = (JSONObject) parser.parse(new FileReader("/home/user/eclipse-workspace/Bridgelbz/src/main/java/com/bridgelabz/OOPS/Repo/inventory.json"));
 			array = (JSONArray) object.get("Rice");
-			System.out.println("Rice inventory value: " + Inventoryy.getValue(array));
-			a = Inventoryy.getValue(array);
+			System.out.println("Rice inventory value: " + Inventoryy.getValue(array)); //Method used to calculate Inventory total and return the value
+			a = Inventoryy.getValue(array); 
 			array = (JSONArray) object.get("Pulses");
 			System.out.println("Pulses inventory value: " + Inventoryy.getValue(array));
 			b = Inventoryy.getValue(array);

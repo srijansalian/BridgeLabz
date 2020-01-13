@@ -10,7 +10,9 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import com.bridgelabz.OOPS.Service.*;
 public class InventoryServiceImp implements InventoryInf{
-
+/**
+ * Method to write a JSON file                                                                                                        
+ */
 	@SuppressWarnings("unchecked")
 	public void writeData() {
 		
@@ -46,6 +48,10 @@ public class InventoryServiceImp implements InventoryInf{
 		printWriter.close();
 		
 	}
+	/**
+	 * Method to read JSON file 
+	 * Calculate the total 
+	 */
 
 	@Override
  public void readData() {
