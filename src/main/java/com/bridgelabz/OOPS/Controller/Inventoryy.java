@@ -16,7 +16,6 @@ public class Inventoryy {
 		long value = 0;
 		while(iterator.hasNext()) {
 			JSONObject obj = (JSONObject)iterator.next();
-		
 			long weight = (long)obj.get("weight");
 			InModel.setWeight(weight);
 			System.out.println("Weight : "+InModel.getWeight());
@@ -25,7 +24,6 @@ public class Inventoryy {
 			System.out.println("Price : "+InModel.getPrice());
 			value = value + weight * price;	
 			InModel.setValue(value);
-		
 		}
 		return InModel.getValue();
 	}

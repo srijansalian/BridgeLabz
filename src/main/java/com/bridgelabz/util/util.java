@@ -332,6 +332,10 @@ public class util {
 				
 
 			}
+			public static String InputString() {
+				String value =  sc.nextLine();
+				return value;
+			}
 		
 		
 	

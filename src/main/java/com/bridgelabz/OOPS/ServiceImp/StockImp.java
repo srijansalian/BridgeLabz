@@ -33,7 +33,7 @@ public class StockImp implements StockInf {
 			}
 		scanner.close();
 		PrintWriter printWriter = null;	//	to write data to the file
-		try {
+		try  {
 			printWriter = new PrintWriter("/home/user/eclipse-workspace/Bridgelbz/src/main/java/com/bridgelabz/OOPS/Repo/Stock.json");
 		} catch (FileNotFoundException e) {
 			
