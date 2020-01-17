@@ -17,8 +17,6 @@ public class StockImp implements StockInf {
 	 */
 	public void writeData() {
 		Scanner scanner = new Scanner(System.in);
-		
-		
 		System.out.println("Enter the number of Stocks");
 		int n = scanner.nextInt();
 		JSONArray array = new JSONArray();
@@ -40,9 +38,7 @@ public class StockImp implements StockInf {
 			e.printStackTrace();
 		}
 		printWriter.write(array.toJSONString());
-		printWriter.close();
-		
-		
+		printWriter.close();	
 	}
 	/*
 	 * Method to read the Object from the JSON file
