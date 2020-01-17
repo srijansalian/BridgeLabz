@@ -25,6 +25,9 @@ public class StockAccount {
 	private static FileReader fileReader;
 	static Scanner sc = new Scanner(System.in);
 	@SuppressWarnings("unchecked")
+	/*
+	 * Method used to display all the Data from the file.
+	 */
 	public static <T> void displayReport() throws IOException, org.json.simple.parser.ParseException {
 		File file1 = new File("/home/user/eclipse-workspace/Bridgelbz/src/main/java/com/bridgelabz/OOPS/Repo/Stock.json");
 
@@ -39,48 +42,63 @@ public class StockAccount {
 			System.out.println(object);
 		}
 	}
-
-
-	public static void main(String[] args) {
+	public static void Display() {
 		StockAccountImp SAI = new StockAccountImp();
-		System.out.println("Enter the choice");
+		System.out.println("************Menu*************");
+		System.out.println("1.Add the User into the file");
+		System.out.println("2.Buy the Share");
+		System.out.println("3.Sell the Share");
+		System.out.println("4.Display");
+		System.out.println("5.Exit");
+		System.out.println(); 
+		System.out.println("Enter the Choice");
 		int choice =sc.nextInt();
 		switch(choice) {
 		case 1:
-			try {
-				SAI.createUser();
-			} catch (IOException e) {
-				e.printStackTrace();
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}
-			break;
+				try {
+					SAI.createUser();
+					Display();
+				} catch (IOException e) {
+					e.printStackTrace();
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}
+				break;
 		case 2:try {
-				SAI.buyShare();
-			} catch (IOException e) {
-				e.printStackTrace();
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}
+					SAI.buyShare();
+					Display();
+				} catch (IOException e) {
+					e.printStackTrace();
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}
+		break;
 		case 3:try {
-				SAI.sellShare();
-			} catch (Throwable e) {
-				e.printStackTrace();
-			}
-		case 4:try {
-				displayReport();
-			} catch (IOException e) {
-				e.printStackTrace();
-			} catch (ParseException e) {
-				
-				e.printStackTrace();
-			}
+					SAI.sellShare();
+					Display();
+				} catch (Throwable e) {
+					e.printStackTrace();
+				}
+		break;
+			case 4:try {
+					displayReport();
+					Display();
+				} catch (IOException e) {
+					e.printStackTrace();
+				} catch (ParseException e) {
+					
+					e.printStackTrace();
+				}
+			break;
+		case 5: break;
 		
 		}
-	
 		
-		
+	}
 
+
+	public static void main(String[] args) {
+		Display();
 	}
 
 }

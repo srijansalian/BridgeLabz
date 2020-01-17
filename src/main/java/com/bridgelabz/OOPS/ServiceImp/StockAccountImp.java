@@ -1,6 +1,6 @@
 package com.bridgelabz.OOPS.ServiceImp;
 import java.io.File;
-import java.io.FileNotFoundException;
+
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -17,12 +17,15 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import com.bridgelabz.OOPS.Service.StockAccountInf;
+import com.bridgelabz.datastructure.Queue;
+import com.bridgelabz.datastructure.SinglyLinkedList;
 import com.bridgelabz.datastructure.Stack;
 public class StockAccountImp implements StockAccountInf{
 	static Scanner sc = new Scanner(System.in);
 	private static File file;
 	private static FileWriter fileWriter;
 	private static FileReader fileReader;	
+	@SuppressWarnings("unchecked")
 	@Override
 	public void createUser() throws IOException, ParseException {
 boolean checkUser = true;
@@ -108,8 +111,7 @@ boolean checkUser = true;
 
 					Stack stack = new Stack();
 					stack.push(symbol);
-					// System.out.println("Stack symbol" +stack);
-
+					
 					// Check in company Shares share symbol
 					while (iterator1.hasNext()) {
 
@@ -137,13 +139,14 @@ boolean checkUser = true;
 							object.put("numberOfShare", updateNumberOfShare);
 							object1.put("shareCount", shareCountCompany);
 
-							LinkedList<String> queue = new LinkedList<String>();
+							Queue<String> SL = new Queue<String>();
 							Date date = new Date();
 							String currentDateTime = new SimpleDateFormat("E dd/MM/yyyy. 'at' hh:mm:ss a").format(date);
-							queue.add(currentDateTime);
+							SL.enqueue(currentDateTime);
 							System.out.println("Date and Time of Share Purchase:" + " " + currentDateTime + "\n");
-
-						}
+							System.out.println(stack);
+							System.out.println(SL);
+						
 
 						fileWriter = new FileWriter(file1);
 						// writing back JSon file to JSonArray
@@ -158,6 +161,8 @@ boolean checkUser = true;
 					fileWriter.close();
 				}
 			}
+		
+	}
 		}
 	}
 		
