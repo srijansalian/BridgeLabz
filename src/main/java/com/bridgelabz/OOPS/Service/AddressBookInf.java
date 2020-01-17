@@ -5,6 +5,4 @@ public interface AddressBookInf {
 	void editInformation();
 	void deletePerson();
 	void printAddressBook();
-	
-
 }

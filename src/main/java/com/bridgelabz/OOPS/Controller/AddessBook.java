@@ -3,7 +3,9 @@ import com.bridgelabz.OOPS.ServiceImp.AddressBookImp;
 import com.bridgelabz.util.util;
 
 public class AddessBook {
-
+/*
+ * Method that is displays the menu for the user 
+ */
 	static void askPerson() {
 		AddressBookImp address = new  AddressBookImp();
 		System.out.println("************MENU*************");
@@ -31,7 +33,9 @@ public class AddessBook {
 		}
 		
 	}
-
+/*
+ * Main class of an Address Book
+ */
 	public static void main(String[] args) {
 		askPerson();
 		

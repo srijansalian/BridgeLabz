@@ -1,5 +1,7 @@
 package com.bridgelabz.OOPS.Model;
-
+/*
+ * Class for the get and set method  
+ */
 public class InventoryModel {
 	private long weight;
 	public long getWeight() {

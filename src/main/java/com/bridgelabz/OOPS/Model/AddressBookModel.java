@@ -1,5 +1,7 @@
 package com.bridgelabz.OOPS.Model;
-
+/*
+ * a Class for the set and get method
+ */
 public class AddressBookModel {
 	String firstName;
 	String lastName;

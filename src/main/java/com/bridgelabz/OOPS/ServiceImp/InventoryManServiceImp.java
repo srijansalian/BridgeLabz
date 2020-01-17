@@ -11,6 +11,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import com.bridgelabz.OOPS.Service.*;
+import com.bridgelabz.util.util;
 public class InventoryManServiceImp implements InventoryManInf {
 	@SuppressWarnings("unchecked")
 	/*
@@ -18,21 +19,21 @@ public class InventoryManServiceImp implements InventoryManInf {
 	 */
 	public void writeData() {
 		
-		Scanner scanner = new Scanner(System.in);	
-		String[] names = new String[] {"Rice" , "Wheat" , "Pulses"};	
 		
+		String[] names = new String[] {"Rice" , "Wheat" , "Pulses"};	
+		Scanner scanner = new Scanner(System.in);
 		JSONObject finalObject = new JSONObject();	//Creating of an Object
 		for (String name : names) {	
 			System.out.print("Enter number of types of " + name + " : ");
-			int count = scanner.nextInt();	
+			int count = util.inputInteger();	
 			JSONArray array = new JSONArray();	
 			
 			for(int i = 0; i < count; i++) {	
 				JSONObject jsonObject  = new JSONObject();
 				System.out.print("Enter name, weight and price: ");
-				jsonObject.put("name", scanner.next());    // Accepting the user Inputs
-				jsonObject.put("weight", scanner.nextInt());
-				jsonObject.put("price", scanner.nextInt());
+				jsonObject.put("name", util.inputInteger());    // Accepting the user Inputs
+				jsonObject.put("weight", util.inputInteger());
+				jsonObject.put("price", util.inputInteger());
 				System.out.println("=================================================================");
 				array.add(jsonObject); //Inserting the JSONObject into an JSONArray
 			}			
@@ -78,9 +79,9 @@ public class InventoryManServiceImp implements InventoryManInf {
 			array = (JSONArray) object.get("Wheat");
 			System.out.println("Wheat inventory value: " +Inventoryy.getValue(array));
 			c = Inventoryy.getValue(array);
-			grand=a+b+c;
+			grand=a+b+c;   // To find out the grand total
 			Inmodel.setGrand(grand);
-			
+			//Display the Grand Total
 			System.out.println("The Grand Total of an Inventory is : "+Inmodel.getGrand());
 		}
 		catch (FileNotFoundException e) {

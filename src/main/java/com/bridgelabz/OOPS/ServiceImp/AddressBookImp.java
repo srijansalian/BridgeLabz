@@ -1,50 +1,48 @@
 package com.bridgelabz.OOPS.ServiceImp;
-
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.Iterator;
 import java.util.Scanner;
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-
 import com.bridgelabz.OOPS.Service.AddressBookInf;
-
+import com.bridgelabz.util.util;
 public class AddressBookImp implements AddressBookInf {
 	private static File file;
 	private static FileWriter fileWriter;
 	private static FileReader fileReader;
 	static Scanner sc = new Scanner(System.in);
-
-
 	@SuppressWarnings("unchecked")
 	@Override
+	/*
+	 * Method used for the add the new address to the Address Book
+	 */
 	public void addNewPerson() {
 		try {
 			file = new File("/home/user/eclipse-workspace/Bridgelbz/src/main/java/com/bridgelabz/OOPS/Repo/Address.json");
 			if (file.exists()) {
-
+					// Returns true if the value is true
 				if (file.canRead() && file.canWrite()) {
 					fileReader = new FileReader(file);
 					JSONParser parser = new JSONParser();
 					JSONArray array =(JSONArray) parser.parse(fileReader);
 					JSONObject json = new JSONObject();
 					System.out.println("Enter First Name:");
-					String firstname =  sc.next();
+					String firstname =  util.inputWord();
 					System.out.println("Enter Last Name:");
-					String lastname =  sc.next();
+					String lastname =  util.inputWord();
 					System.out.println("Enter Address:");
-					String address =  sc.next();
+					String address = util.inputWord();
 					System.out.println("Enter City:");
-					String city = sc.next();
+					String city = util.inputWord();
 					System.out.println("Enter State:");
-					String state =  sc.next();
+					String state =  util.inputWord();
 					System.out.println("Enter ZIP Code:");
-					String zip =  sc.next();
+					String zip =  util.inputWord();
 					System.out.println("Enter Mobile Number:");
-					String mobile =  sc.next();
+					String mobile = util.inputWord();//Adding all the object into the jsonObject
 					json.put("Firstname", firstname);
 					json.put("Lastname", lastname);
 					json.put("Address", address);
@@ -52,7 +50,7 @@ public class AddressBookImp implements AddressBookInf {
 					json.put("State", state);
 					json.put("Zip", zip);
 					json.put("Mobile", mobile);
-					array.add(json);
+					array.add(json);  //Adding the object into the  JSONArray
 					System.out.println("Your details added Successfully." + "\n");
 					fileWriter = new FileWriter(file);
 					fileWriter.write(JSONArray.toJSONString(array));
@@ -64,17 +62,18 @@ public class AddressBookImp implements AddressBookInf {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		
-		
+		}	
 	}
-
+	@SuppressWarnings("unchecked")
 	@Override
+	/*
+	 * Method used for the editing the information address Book
+	 */
 	public void editInformation() {
 		{
 			try {
 				file = new File("/home/user/eclipse-workspace/Bridgelbz/src/main/java/com/bridgelabz/OOPS/Repo/Address.json");
-				if (file.exists()) {
+				if (file.exists()) {  //Return true if the value is present 
 					if (file.canRead() && file.canWrite()) {
 						fileReader = new FileReader(file);
 						JSONParser parser = new JSONParser();
@@ -92,11 +91,11 @@ public class AddressBookImp implements AddressBookInf {
 								System.out.println("City");
 								System.out.println("State");
 								System.out.println("Zip");
-								String edit = sc.next();
+								String edit = util.inputWord();
 								System.out.println("Enter the" + edit + " to update.");
-								String update = sc.next();
-								object.remove(edit);
-								object.put(edit, update);
+								String update = util.inputWord();
+								object.remove(edit); //Removing the previous value
+								object.put(edit, update); //Inserting the new value
 								System.out.println("Information Saved Successfully.");
 								check = true;
 								break;
@@ -120,7 +119,9 @@ public class AddressBookImp implements AddressBookInf {
 		}
 		
 	}
-
+/*
+ * Method used for the Deleting the complete address from the address book by taking the user name 
+ */
 	@Override
 	public void deletePerson() {
 		{
@@ -133,13 +134,13 @@ public class AddressBookImp implements AddressBookInf {
 						JSONArray array = (JSONArray) parser.parse(fileReader);
 
 						System.out.println("Enter The FristName That must br Deleted");
-						String name = sc.next();
+						String name = util.inputWord();
 
 						Iterator<?> iterator = array.iterator();
 						boolean check = false;
 						while (iterator.hasNext()) {
 							JSONObject jsonObject = (JSONObject) iterator.next();
-
+								//Condition used for the match the user input
 							if (jsonObject.get("Firstname").equals(name)) {
 								array.remove(jsonObject);
 								System.out.println("Deleted Successfully." + "\n");
@@ -166,6 +167,9 @@ public class AddressBookImp implements AddressBookInf {
 		}
 		
 	}
+	/*
+	 * Method used to print the addressBook
+	 */
 
 	@Override
 	public void printAddressBook() {

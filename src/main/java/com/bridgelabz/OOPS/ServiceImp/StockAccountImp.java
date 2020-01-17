@@ -1,6 +1,5 @@
 package com.bridgelabz.OOPS.ServiceImp;
 import java.io.File;
-
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -9,16 +8,13 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Scanner;
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
 import com.bridgelabz.OOPS.Service.StockAccountInf;
 import com.bridgelabz.datastructure.Queue;
-import com.bridgelabz.datastructure.SinglyLinkedList;
 import com.bridgelabz.datastructure.Stack;
 public class StockAccountImp implements StockAccountInf{
 	static Scanner sc = new Scanner(System.in);
