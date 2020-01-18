@@ -161,8 +161,6 @@ boolean checkUser = true;
 	}
 		}
 	}
-		
-	
 	@SuppressWarnings("unchecked")
 	@Override
 	public void sellShare() throws Throwable{
