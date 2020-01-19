@@ -16,7 +16,7 @@ public class Flipcoin {
 		int a=(tail*100)/n;
 		int b=100-a;
 		System.out.println("Tail is "+a);
-		System.out.println("Head is"+b);
+		System.out.println("Head is "+b);
 
 		
 	}
