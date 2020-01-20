@@ -7,9 +7,12 @@ public class Employee implements Cloneable{
 	
 	private List<String> emplist;
 	
-	private Employee(List<String> temp) {
+	
+	public Employee() {
 		emplist = new ArrayList<String>();
-		
+	}
+	public Employee(List<String> temp) {
+		this.emplist = temp;
 	}
 	public void Load() {
 		emplist.add("Srijan");
