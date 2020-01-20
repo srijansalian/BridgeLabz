@@ -8,6 +8,9 @@ public class ComputerFactory {
 		else
 			if("Server".equalsIgnoreCase(tpye)) 
 				return new Server(Ram,HDD,CPU);
+			else
+				if("Laptop".equalsIgnoreCase(tpye))
+					return new Laptop(Ram,HDD,CPU);
 		
 		return null;
 	}
