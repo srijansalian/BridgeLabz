@@ -12,5 +12,18 @@ public class ThreadSafeSingleton {
 		}
 		return instance;
 	}
-
+	
+	/*
+	 * Double checking the synchronized
+	 */
+	public static ThreadSafeSingleton  Doublechecking() {
+		if(instance==null) {
+			synchronized(ThreadSafeSingleton.class) {
+				if(instance==null) {
+					instance = new ThreadSafeSingleton();
+					
+				}
+			}
+		} return instance;
+	}
 }
