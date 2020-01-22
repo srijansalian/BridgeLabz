@@ -17,7 +17,7 @@ public class util {
 	/* This method is used to input a String */
 
 	public static String inputWord() {
-		// System.out.println("Enter the String");
+		 System.out.println("Enter the String");
 		String str = sc.next();
 		return str;
 	}
