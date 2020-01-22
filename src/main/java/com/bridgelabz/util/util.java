@@ -182,6 +182,18 @@ public class util {
 			return h1;
 		
 	}
+	/*
+	 * used to find out the power
+	 */
+	public static void power(int n) {
+		int i=0;
+		int a=1;
+		while(n>=i) {
+			System.out.println(i+"    "+a);
+			a=2*a;
+			i++;
+		}
+	}
 	
 	/*Used to  find out the  given string is an anagram or not*/
 	public static boolean anagram(String a,String b) {
