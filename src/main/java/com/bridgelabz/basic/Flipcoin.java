@@ -1,7 +1,10 @@
 package com.bridgelabz.basic;
 import com.bridgelabz.util.util;
+import java.util.logging.Logger;
 
 public class Flipcoin {
+	static Logger logger = Logger.getLogger(Flipcoin.class.getName()); 
+
 	static void flip(int n) {
 		@SuppressWarnings("unused")
 		int head=0,tail=0;
@@ -15,14 +18,14 @@ public class Flipcoin {
 		}
 		int a=(tail*100)/n;
 		int b=100-a;
-		System.out.println("Tail is "+a);
-		System.out.println("Head is "+b);
+		logger.info("Tail is "+a);
+		logger.info("Head is "+b);
 
 		
 	}
 
 	public static void main(String[] args) {
-		System.out.println("Enter Number of tines the coin must be Fliped");
+		logger.info("Enter Number of tines the coin must be Fliped");
 		int n=util.inputInteger();
 		flip(n);
 		

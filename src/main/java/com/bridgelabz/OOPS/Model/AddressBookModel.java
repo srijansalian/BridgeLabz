@@ -3,12 +3,12 @@ package com.bridgelabz.OOPS.Model;
  * a Class for the set and get method
  */
 public class AddressBookModel {
-	String firstName;
-	String lastName;
-	String address;
-	String city;
-	String state;
-	String zip;
+	private String firstName;
+	private String lastName;
+	private String address;
+	private String city;
+	private String state;
+	private String zip;
 	long phoneNumber;
 	public String getFirstName() {
 		return firstName;
