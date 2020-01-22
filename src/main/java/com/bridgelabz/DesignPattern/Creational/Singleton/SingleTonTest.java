@@ -19,8 +19,8 @@ public class SingleTonTest {
 	        SerilizationSingleton instanceTwo = (SerilizationSingleton) in.readObject();
 	        in.close();
 	        
-	        System.out.println("instance 1 hashCode="+instanceOne.hashCode());
-	        System.out.println("instance 2 hashCode="+instanceTwo.hashCode());
+	        System.out.println("Instance 1 hashCode="+instanceOne.hashCode());
+	        System.out.println("Instance 2 hashCode="+instanceTwo.hashCode());
 	        
 	    }
 
