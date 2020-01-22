@@ -236,6 +236,22 @@ public class util {
 	System.out.println("The number of time  "+count);
 	}
 	
+	/*
+	 * To Find the wind chill for the given value 
+	 */
+	public static void windchill(double v, double t) {
+		if(t<50||t<120 && t>3) {
+			
+			
+	        double w = 35.74 + 0.6215*t + (0.4275*t - 35.75) * Math.pow(v, 0.16);
+	        System.out.println("Temperature = " + t);
+	        System.out.println("Wind speed  = " + v);
+	        System.out.println("Wind chill  = " + w);
+			}
+			else
+				System.out.println("Not valid ");
+	    }
+	
 	/*Used to  find out the  given string is an anagram or not*/
 	public static boolean anagram(String a,String b) {
 		int n1=a.length();
