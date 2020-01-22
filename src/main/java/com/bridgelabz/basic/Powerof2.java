@@ -1,3 +1,6 @@
+/*
+ * To find out the Power of a 2 of a given number
+ */
 package com.bridgelabz.basic;
 
 import com.bridgelabz.util.util;

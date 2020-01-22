@@ -1,3 +1,6 @@
+/*
+ * To Display the two D Array
+ */
 package com.bridgelabz.functional;
 
 import java.io.OutputStreamWriter;

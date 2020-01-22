@@ -1,4 +1,8 @@
+/*
+ * To find out the Harmony of the given value
+ */
 package com.bridgelabz.basic;
+
 
 import com.bridgelabz.util.util;
 

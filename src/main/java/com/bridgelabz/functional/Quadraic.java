@@ -1,3 +1,6 @@
+/*
+ * To find out the quadratic of the equation
+ */
 package com.bridgelabz.functional;
 
 import com.bridgelabz.util.util;
