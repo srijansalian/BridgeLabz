@@ -214,6 +214,28 @@ public class util {
 					System.out.println("Roots are Complex");
 		}
 	
+	/*
+	 * Used to find out the number of zero present in the array
+	 */
+	public static void Sumzero(int a[]) {
+		int count=0;
+		for(int i=0;i<a.length-2;i++) 
+		{
+		for(int j=i+1;j<a.length-1;j++) 
+			{
+			
+			for(int k=j+1;k<a.length;k++) 
+				{
+				if(a[i]+a[j]+a[k]==0) {
+					count++;
+				}
+				
+			}
+		}
+	}
+	System.out.println("The number of time  "+count);
+	}
+	
 	/*Used to  find out the  given string is an anagram or not*/
 	public static boolean anagram(String a,String b) {
 		int n1=a.length();
