@@ -194,6 +194,25 @@ public class util {
 			i++;
 		}
 	}
+	/*
+	 * Used to find out the quadratic of the given equation
+	 */
+	public static void quadraic(double a ,double b, double c) {
+		double delta=((b*b)-4*a*c);
+		if(delta==0) {
+			double result=(-b/(2*a));
+			System.out.println("Result is"+result);
+		}
+			else
+				if(delta>0) {
+					double result1=(-b+Math.sqrt(delta)/(2*a));
+					double result2=(-b-Math.sqrt(delta)/(2*a));
+					System.out.println("Results are"+result1+"  "+result2);
+					
+				}
+				else
+					System.out.println("Roots are Complex");
+		}
 	
 	/*Used to  find out the  given string is an anagram or not*/
 	public static boolean anagram(String a,String b) {
