@@ -171,6 +171,18 @@ public class util {
 		}
 	}
 	
+	/*
+	 * Method to find the Harnoi
+	 */
+	public static double Harnoi(int n) {
+		float h1=1;
+		for(int i=2;i<=n;i++) {
+			h1+=(float)1/i;
+		}
+			return h1;
+		
+	}
+	
 	/*Used to  find out the  given string is an anagram or not*/
 	public static boolean anagram(String a,String b) {
 		int n1=a.length();

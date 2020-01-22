@@ -1,7 +1,7 @@
 package com.bridgelabz.basic;
 import com.bridgelabz.util.util;
 public class Harmonic {
-	static double Harnoi(int n) {
+	public static double Harnoi(int n) {
 		float h1=1;
 		for(int i=2;i<=n;i++) {
 			h1+=(float)1/i;
