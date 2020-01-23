@@ -517,5 +517,24 @@ public class util {
 		}
 		return sk.size() == 0;
 	}
+	
+	/*
+	 *Method for the binary search tree
+	 */
+	public static int binarycount(int n) {
+		if(n==0||n==1)
+			return 1;
+		else
+		{
+			int left=0,right=0,sum=0;
+			for(int k=1;k<=n;k++) {
+				left=binarycount(k-1);
+				right=binarycount(n-k);
+				sum+=left*right;
+			}
+			return sum;
+		}
+		
+	}
 
 }
