@@ -7,6 +7,8 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import com.bridgelabz.datastructure.Stack;
+
 public class util {
 	static BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));;
 	static Scanner sc = new Scanner(System.in);
@@ -17,7 +19,7 @@ public class util {
 	/* This method is used to input a String */
 
 	public static String inputWord() {
-		 System.out.println("Enter the String");
+		System.out.println("Enter the String");
 		String str = sc.next();
 		return str;
 	}
@@ -367,6 +369,7 @@ public class util {
 		}
 		return arr;
 	}
+
 	/*
 	 * Recursive permutation of the String
 	 */
@@ -421,7 +424,7 @@ public class util {
 	/*
 	 * The method which implements the prime range
 	 */
-	
+
 	public static void prime(int a, int b) {
 		int flag = 0;
 
@@ -484,6 +487,35 @@ public class util {
 	public static String InputString() {
 		String value = sc.nextLine();
 		return value;
+	}
+
+	/*
+	 * To Whether the given equation is Parentheses is Balanced or not
+	 */
+	public static boolean isBalanced(String str) {
+		Stack<Character> sk = new Stack<Character>();
+		for (int i = 0; i < str.length(); i++) {
+			char ch = str.charAt(i);
+			if (ch == '{' || ch == '[' || ch == '(') {
+				sk.push(ch);
+
+			} else {
+				if (sk.size() == 0)
+					return false;
+				Character c = sk.pop();
+				if (ch == ')') {
+					if (c != '(')
+						return false;
+				} else if (ch == '}') {
+					if (c != '{')
+						return false;
+				} else if (ch == ']') {
+					if (c != '[')
+						return false;
+				}
+			}
+		}
+		return sk.size() == 0;
 	}
 
 }
