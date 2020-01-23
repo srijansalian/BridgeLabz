@@ -1,6 +1,9 @@
 package com.bridgelabz.datastructure;
 
 import com.bridgelabz.util.util;
+/*
+ * To find the given string is a Balanced or not
+ */
 
 public class BalancedParentheses {
 
