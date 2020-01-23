@@ -1,5 +1,7 @@
 package com.bridgelabz.datastructure;
 import java.util.Scanner;
+
+import com.bridgelabz.util.util;
 public class Calendar {
 
 	
@@ -20,19 +22,12 @@ public class Calendar {
 		public static void main(String[] args) {
 			System.out.println("Enter the month");
 			Scanner sc=new Scanner(System.in);
-			int month=sc.nextInt();
+			int month=util.inputInteger();
 			System.out.println("Enter the year");
 			int year=sc.nextInt();
-			String[] months = {
-		            "",                               
-		            "January", "February", "March",
-		            "April", "May", "June",
-		            "July", "August", "September",
-		            "October", "November", "December"
-		        };
+			String[] months = {"","January", "February", "March","April", "May", "June","July", "August", "September","October", "November", "December"};
 			int[] days = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 			if (month == 2 && isLeapYear(year)) days[month] = 29;
-			//System.out.println(" S  M Tu  W Th  F  S\n");
 			int a[][]=new int[5][7];
 			String[] week= {"S  ","M  ","Tu  ","W  ","Th  ","F  ","S  \n"};
 			for(int i=0;i<week.length;i++)
