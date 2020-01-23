@@ -11,9 +11,11 @@ public class MySql {
 
 	public void generateMySqlPDFReport(String tableName, Connection con) {
 		// get data from table and generate pdf report
+		System.out.println("IAM PDF");
 	}
 
 	public void generateMySqlHTMLReport(String tableName, Connection con) {
 		// get data from table and generate pdf report
+		System.out.println("IAM HTML");
 	}
 }

@@ -10,10 +10,12 @@ public class MyOracle {
 
 	public void generateOraclePDFReport(String tableName, Connection con) {
 		// get data from table and generate pdf report
+		System.out.println("IAM PDF");
 	}
 
 	public void generateOracleHTMLReport(String tableName, Connection con) {
 		// get data from table and generate pdf report
+		System.out.println("IAM HTML");
 	}
 
 }
