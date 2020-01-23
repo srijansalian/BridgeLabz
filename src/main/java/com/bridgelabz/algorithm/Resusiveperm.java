@@ -1,6 +1,9 @@
 package com.bridgelabz.algorithm;
 
 import com.bridgelabz.util.util;
+/*
+ * To method for the permutation of the String
+ */
 
 public class Resusiveperm {
 
