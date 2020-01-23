@@ -1,4 +1,4 @@
-package com.bridgelabz.designpattern.structural.facadedesignpattern;
+package com.bridgelabz.DesignPattern.Structural.facadedesignpattern;
 
 import java.sql.Connection;
 
