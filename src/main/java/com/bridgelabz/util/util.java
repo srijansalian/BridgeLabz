@@ -400,6 +400,25 @@ public class util {
 		util.printArraystring(arr);
 
 	}
+	/*
+	 * The method which implements the prime range
+	 */
+	
+	public static void prime(int a, int b) {
+		int flag = 0;
+
+		for (int i = a; i <= b; i++) {
+			for (int j = 2; j < i; j++) {
+				if (i % j == 0) {
+					flag = 0;
+					break;
+				} else
+					flag = 1;
+			}
+			if (flag == 1)
+				System.out.println(i);
+		}
+	}
 
 	/* to find out number is a prime or not */
 	public static boolean isPrime(int num) {
