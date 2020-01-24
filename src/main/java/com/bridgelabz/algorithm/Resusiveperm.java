@@ -9,7 +9,7 @@ public class Resusiveperm {
 
 	public static void main(String[] args) {
 		String s = util.inputWord();
-		util.printPermutn(s, "");
+		util.printPermutn(s, ""); //Permutation method is called
 
 	}
 }

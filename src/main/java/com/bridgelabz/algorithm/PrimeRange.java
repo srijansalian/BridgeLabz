@@ -11,7 +11,7 @@ public class PrimeRange {
 		System.out.println("Entet the first number and the second number");
 		int a = util.inputInteger();
 		int b = util.inputInteger();
-		util.prime(a, b);
+		util.prime(a, b);//Prime method is called
 
 	}
 
