@@ -3,7 +3,7 @@ package com.bridgelabz.DesignPattern.behavioral.visitor;
 import java.text.DecimalFormat;
 
 public class TaxHoildayVisitor implements VisitorInf {
-	
+
 	DecimalFormat df = new DecimalFormat("#.##"); // This formats the decimal into 2 decimal points
 
 	public TaxHoildayVisitor() {
