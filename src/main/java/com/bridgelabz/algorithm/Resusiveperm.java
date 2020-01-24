@@ -8,8 +8,8 @@ import com.bridgelabz.util.util;
 public class Resusiveperm {
 
 	public static void main(String[] args) {
-		String s = util.inputWord();
-		util.printPermutn(s, ""); //Permutation method is called
+		String string = util.inputWord();
+		util.printPermutn(string, ""); //Permutation method is called
 
 	}
 }

@@ -10,8 +10,8 @@ public class Anagram {
 	public static void main(String[] args) {
 		String str1 = util.inputWord();
 		String str2 = util.inputWord();/* input an variable to an variable */
-		boolean s = util.anagram(str1, str2);/* An function used to find out the anagram */
-		if (s)
+		boolean anagram = util.anagram(str1, str2);/* An function used to find out the anagram */
+		if (anagram)
 			System.out.println("String is anagram");
 		else
 			System.out.println("Not an anagram");

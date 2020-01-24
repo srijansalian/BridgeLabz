@@ -6,6 +6,9 @@ import java.util.logging.Logger;
 public class Flipcoin {
 	static Logger logger = Logger.getLogger(Flipcoin.class.getName());
 
+	/*
+	 * Method used for the find out the number of percentage of the coin tossed.
+	 */
 	static void flip(int n) {
 
 		int head = 0;
@@ -25,9 +28,12 @@ public class Flipcoin {
 
 	}
 
+	/*
+	 * Main Function
+	 */
 	public static void main(String[] args) {
 		logger.info("Enter Number of tines the coin must be Fliped");
-		int n = util.inputInteger();
+		int n = util.inputInteger(); // Fslip coin method is called
 		flip(n);
 
 	}

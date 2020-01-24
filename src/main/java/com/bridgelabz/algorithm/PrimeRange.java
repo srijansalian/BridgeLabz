@@ -9,9 +9,9 @@ public class PrimeRange {
 	public static void main(String[] args) {
 
 		System.out.println("Entet the first number and the second number");
-		int a = util.inputInteger();
-		int b = util.inputInteger();
-		util.prime(a, b);//Prime method is called
+		int num1 = util.inputInteger();
+		int num2 = util.inputInteger();
+		util.prime(num1, num2);//Prime method is called
 
 	}
 
